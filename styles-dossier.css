@@ -1,0 +1,451 @@
+:root {
+  --bg: #0d0e10;
+  --ink: #f2f2ef;
+  --muted: #9a9da3;
+  --line: rgba(242, 242, 239, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0d0e10;
+  color: var(--ink);
+  font-family: "Archivo", sans-serif;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.js body {
+  overflow-x: hidden;
+}
+
+.backrooms-page {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body.bright-mode {
+  background: #f3f1ea;
+  color: #111214;
+}
+
+body.night-vision {
+  background: #08110a;
+  color: #d4ffc8;
+}
+
+body.bright-mode .dossier-top,
+body.bright-mode .dossier-id,
+body.bright-mode .meta-label,
+body.bright-mode .dossier-tab,
+body.bright-mode .dossier-utility {
+  color: #5d6167;
+}
+
+body.night-vision .dossier-top,
+body.night-vision .dossier-id,
+body.night-vision .meta-label,
+body.night-vision .dossier-tab,
+body.night-vision .dossier-utility {
+  color: #7bc98a;
+}
+
+body.bright-mode .dossier-body p,
+body.bright-mode .dossier-list,
+body.bright-mode .dossier-email {
+  color: #202327;
+}
+
+body.night-vision .dossier-body p,
+body.night-vision .dossier-list,
+body.night-vision .dossier-email {
+  color: #b6f2b0;
+}
+
+body.bright-mode .dossier-tab,
+body.bright-mode .dossier-utility,
+body.bright-mode .command-palette-panel {
+  border-color: rgba(17, 18, 20, 0.12);
+}
+
+body.night-vision .dossier-tab,
+body.night-vision .dossier-utility,
+body.night-vision .command-palette-panel {
+  border-color: rgba(182, 242, 176, 0.18);
+}
+
+body.bright-mode .dossier-tab-active {
+  color: #111214;
+  border-color: rgba(17, 18, 20, 0.24);
+  background: rgba(17, 18, 20, 0.05);
+}
+
+body.night-vision .dossier-tab-active {
+  color: #d4ffc8;
+  border-color: rgba(182, 242, 176, 0.32);
+  background: rgba(123, 201, 138, 0.08);
+}
+
+body.bright-mode .dossier-grid-overlay {
+  background-image:
+    linear-gradient(rgba(17, 18, 20, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 18, 20, 0.05) 1px, transparent 1px);
+}
+
+body.night-vision .dossier-grid-overlay {
+  background-image:
+    linear-gradient(rgba(182, 242, 176, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(182, 242, 176, 0.05) 1px, transparent 1px);
+}
+
+.dossier-id-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dossier-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 28px 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.dossier-top,
+.dossier-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.dossier-top {
+  align-items: center;
+}
+
+.dossier-top-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dossier-top,
+.dossier-id,
+.meta-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.dossier-body {
+  max-width: 100%;
+  padding: 72px 0 34px;
+}
+
+.dossier-body-hidden {
+  padding-top: 108px;
+}
+
+.dossier-body p {
+  margin: 0 0 24px;
+  font-size: 1.22rem;
+  line-height: 1.9;
+  color: #d8d8d4;
+}
+
+.dossier-list {
+  margin: 0;
+  padding-left: 18px;
+  color: #d8d8d4;
+  line-height: 1.9;
+  max-width: 100%;
+}
+
+.dossier-list li + li {
+  margin-top: 10px;
+}
+
+.dossier-reading-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.dossier-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.dossier-tab,
+.dossier-utility {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dossier-tab-active {
+  color: var(--ink);
+  border-color: rgba(242, 242, 239, 0.28);
+  background: rgba(242, 242, 239, 0.06);
+}
+
+.dossier-grid-overlay {
+  position: fixed;
+  inset: 0;
+  opacity: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(242, 242, 239, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 242, 239, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  transition: opacity 240ms ease;
+}
+
+.grid-visible .dossier-grid-overlay {
+  opacity: 1;
+}
+
+.dossier-meta {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.dossier-meta p,
+.dossier-email {
+  margin: 0 0 10px;
+  color: #d8d8d4;
+}
+
+.dossier-email-large {
+  display: inline-block;
+  font-size: 1.22rem;
+  line-height: 1.9;
+}
+
+.dossier-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.dossier-social-link {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.backrooms-frame {
+  position: relative;
+  min-height: 100vh;
+}
+
+.backrooms-noise {
+  position: fixed;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image:
+    linear-gradient(transparent 0%, rgba(0, 0, 0, 0.38) 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.12) 0 1px,
+      transparent 1px 3px
+    );
+}
+
+.backrooms-left {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 248, 198, 0.46), transparent 14%),
+    linear-gradient(180deg, rgba(138, 129, 74, 0.22) 0 11%, transparent 11%),
+    linear-gradient(90deg, rgba(92, 84, 49, 0.34) 0 8%, rgba(72, 67, 39, 0.18) 8% 9%, transparent 9% 91%, rgba(72, 67, 39, 0.18) 91% 92%, rgba(92, 84, 49, 0.34) 92%),
+    linear-gradient(180deg, #b6ab63 0 57%, #8a834e 57% 60%, #5d573a 60% 100%);
+}
+
+.backrooms-left::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 205, 0.07) 0 9%, transparent 9% 58%, rgba(45, 41, 27, 0.72) 58% 100%),
+    repeating-linear-gradient(90deg, rgba(90, 82, 47, 0.18) 0 2px, transparent 2px 180px),
+    radial-gradient(circle at 50% 22%, rgba(255, 249, 216, 0.18), transparent 18%);
+  mix-blend-mode: multiply;
+}
+
+.backrooms-right {
+  background:
+    radial-gradient(circle at 62% 15%, rgba(255, 248, 196, 0.4), transparent 13%),
+    linear-gradient(180deg, rgba(128, 120, 70, 0.24) 0 10%, transparent 10%),
+    linear-gradient(90deg, rgba(102, 93, 53, 0.18) 0 13%, transparent 13% 87%, rgba(102, 93, 53, 0.18) 87%),
+    linear-gradient(135deg, #aaa05f 0 54%, #837b49 54% 57%, #5b5639 57% 100%);
+}
+
+.backrooms-right::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 248, 208, 0.06) 0 9%, transparent 9% 60%, rgba(42, 39, 25, 0.74) 60% 100%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 96px),
+    repeating-linear-gradient(90deg, rgba(83, 76, 45, 0.18) 0 2px, transparent 2px 220px),
+    radial-gradient(circle at 62% 19%, rgba(255, 249, 214, 0.16), transparent 16%);
+  mix-blend-mode: multiply;
+}
+
+.terminal-shell {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: start center;
+  padding-top: 90px;
+  background: rgba(8, 9, 10, 0.62);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  z-index: 4;
+}
+
+.terminal-visible .terminal-shell {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.terminal-panel {
+  width: min(680px, calc(100vw - 32px));
+  padding: 16px;
+  border: 1px solid rgba(242, 242, 239, 0.14);
+  border-radius: 18px;
+  background: rgba(20, 21, 23, 0.96);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+}
+
+.terminal-history {
+  max-height: 320px;
+  overflow: auto;
+  padding-bottom: 8px;
+}
+
+.terminal-line,
+.terminal-prompt,
+.terminal-input {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+}
+
+.terminal-line {
+  margin: 0 0 8px;
+  color: #d8d8d4;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.terminal-line-system {
+  color: var(--muted);
+}
+
+.terminal-line-error {
+  color: #dca0a0;
+}
+
+.terminal-form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  border-top: 1px solid rgba(242, 242, 239, 0.08);
+  padding-top: 12px;
+}
+
+.terminal-prompt {
+  margin: 0;
+  color: var(--muted);
+}
+
+.terminal-input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #d8d8d4;
+  text-align: left;
+  outline: none;
+  padding: 0;
+}
+
+body.bright-mode .terminal-shell {
+  background: rgba(243, 241, 234, 0.72);
+}
+
+body.night-vision .terminal-shell {
+  background: rgba(5, 13, 7, 0.78);
+}
+
+body.bright-mode .terminal-panel {
+  background: rgba(248, 246, 240, 0.96);
+  box-shadow: 0 24px 60px rgba(17, 18, 20, 0.12);
+}
+
+body.night-vision .terminal-panel {
+  background: rgba(9, 18, 11, 0.96);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+body.bright-mode .terminal-line,
+body.bright-mode .terminal-input {
+  color: #202327;
+}
+
+body.bright-mode .terminal-prompt,
+body.bright-mode .terminal-line-system {
+  color: #5d6167;
+}
+
+body.night-vision .terminal-prompt,
+body.night-vision .terminal-line-system {
+  color: #7bc98a;
+}
+
+body.night-vision .terminal-line,
+body.night-vision .terminal-input {
+  color: #b6f2b0;
+}
+
+.dossier-list-reading {
+  max-width: 760px;
+}
+
+@media (max-width: 760px) {
+  .dossier-top,
+  .dossier-meta,
+  .dossier-top-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dossier-tabs {
+    flex-wrap: wrap;
+  }
+
+}

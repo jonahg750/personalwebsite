@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonah Gleitman | Notebook</title>
+    <meta
+      name="description"
+      content="Notebook-style homepage for Jonah Gleitman with a lighter, more personal layout."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles-notebook.css" />
+  </head>
+  <body>
+    <main class="notebook-page">
+      <header class="notebook-header">
+        <div>
+          <p class="notebook-small">Jonah Gleitman</p>
+          <h1>A simple personal homepage for what I’m building around right now.</h1>
+        </div>
+        <a class="notebook-home" href="index.html">All Styles</a>
+      </header>
+
+      <section class="notebook-intro">
+        <p>
+          I build and test autonomous maritime systems at Saronic Technologies as an engineer and back early stage founders across Austin as an investor.
+        </p>
+      </section>
+
+      <section class="notebook-sections">
+        <article>
+          <h2>Bio</h2>
+          <ul class="notebook-list">
+            <li>Test engineer based in Austin, Texas; studied mechanical engineering at UT Austin</li>
+            <li>At Saronic Technologies, I work on autonomous maritime systems, taking ownership of projects involving field work to answer ambiguous, open-ended questions, rapid prototyping, and hardware-in-the-loop testing</li>
+            <li>Venture Partner at Genesis, backing founders at UT Austin; I run the deal flow pipeline, lead investments, and organize events across the Austin startup ecosystem</li>
+            <li>Broadly interested in defense technology, hardware, and consumer software</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="notebook-reading">
+        <p class="notebook-small">Reading</p>
+        <ul>
+          <li>The Hard Thing About Hard Things; Ben Horowitz</li>
+          <li>The Patriot; Jeremy Stern</li>
+          <li>Making Space Lasers Boring; Rob L'Heureux, Arena Magazine</li>
+        </ul>
+      </section>
+
+      <footer class="notebook-footer">
+        <p class="notebook-small">Contact</p>
+        <a
+          class="notebook-email"
+          href="#"
+          data-user="jonahgleitman"
+          data-domain="gmail.com"
+        >
+          jonahgleitman [at] gmail [dot] com
+        </a>
+      </footer>
+    </main>
+    <script>
+      const emailLink = document.querySelector(".notebook-email");
+
+      if (emailLink) {
+        emailLink.href =
+          `mailto:${emailLink.dataset.user}@${emailLink.dataset.domain}`;
+      }
+    </script>
+  </body>
+</html>

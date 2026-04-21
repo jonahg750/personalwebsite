@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonah Gleitman | Other</title>
+    <meta
+      name="description"
+      content="A hidden other page for Jonah Gleitman."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles-dossier.css" />
+  </head>
+  <body data-page="other">
+    <div class="dossier-grid-overlay" aria-hidden="true"></div>
+    <div class="terminal-shell" aria-hidden="true">
+      <div class="terminal-panel">
+        <div class="terminal-history" aria-live="polite"></div>
+        <form class="terminal-form">
+          <label class="terminal-prompt" for="terminal-input-other">jonah@site:~$</label>
+          <input class="terminal-input" id="terminal-input-other" name="command" type="text" autocomplete="off" spellcheck="false" />
+        </form>
+      </div>
+    </div>
+    <main class="dossier-page">
+      <section class="dossier-body dossier-body-hidden"></section>
+    </main>
+    <script src="dossier.js"></script>
+  </body>
+</html>

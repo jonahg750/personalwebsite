@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonah Gleitman | Editorial</title>
+    <meta
+      name="description"
+      content="Jonah Gleitman builds and tests autonomous maritime systems at Saronic Technologies and backs early-stage founders across Austin."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="site-header">
+        <p class="eyebrow">Jonah Gleitman</p>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#reading">Reading</a>
+          <a href="#contact">Contact</a>
+          <a href="index.html">All Styles</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <p class="hero-kicker">Engineer, operator, investor</p>
+          <h1>
+            I build and test autonomous maritime systems at Saronic Technologies as an engineer and back early stage founders across Austin as an investor.
+          </h1>
+        </section>
+
+        <section class="grid" id="about">
+          <article class="card card-large">
+            <p class="section-label">Bio</p>
+            <ul class="content-list">
+              <li>Test engineer based in Austin, Texas; studied mechanical engineering at UT Austin</li>
+              <li>At Saronic Technologies, I work on autonomous maritime systems, taking ownership of projects involving field work to answer ambiguous, open-ended questions, rapid prototyping, and hardware-in-the-loop testing</li>
+              <li>Venture Partner at Genesis, backing founders at UT Austin; I run the deal flow pipeline, lead investments, and organize events across the Austin startup ecosystem</li>
+              <li>Broadly interested in defense technology, hardware, and consumer software</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="section-label">Reading</p>
+            <ul class="content-list">
+              <li>The Hard Thing About Hard Things; Ben Horowitz</li>
+              <li>The Patriot; Jeremy Stern</li>
+              <li>Making Space Lasers Boring; Rob L'Heureux, Arena Magazine</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="section-label">Contact</p>
+            <p>jonahgleitman [at] gmail [dot] com</p>
+          </article>
+
+          <article class="card">
+            <p class="section-label">Format</p>
+            <p>Original bullet structure preserved.</p>
+          </article>
+
+          <article class="card card-accent">
+            <p class="section-label">Source</p>
+            <p>Content kept verbatim from your original draft.</p>
+          </article>
+        </section>
+
+        <section class="contact" id="contact">
+          <div class="contact-copy">
+            <p class="section-label">Contact</p>
+            <h2>Open to thoughtful conversations.</h2>
+            <p>
+              If you’re building something ambitious in hardware, defense, or
+              software, I’d be glad to hear from you.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <p class="contact-label">Email</p>
+            <p class="contact-email">
+              <a
+                class="email-link"
+                href="#contact"
+                data-user="jonahgleitman"
+                data-domain="gmail.com"
+                aria-label="Email Jonah"
+              >
+                jonahgleitman [at] gmail [dot] com
+              </a>
+            </p>
+            <p class="contact-note">
+              Click to reveal a working email link.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      const emailLink = document.querySelector(".email-link");
+
+      if (emailLink) {
+        const address = `${emailLink.dataset.user}@${emailLink.dataset.domain}`;
+        emailLink.href = `mailto:${address}`;
+      }
+    </script>
+  </body>
+</html>

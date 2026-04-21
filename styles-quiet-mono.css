@@ -1,0 +1,95 @@
+:root {
+  --bg: #0f1011;
+  --ink: #ecece7;
+  --muted: #9b9d9f;
+  --line: rgba(236, 236, 231, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f1011;
+  color: var(--ink);
+  font-family: "Source Sans 3", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mono-page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 28px 52px;
+}
+
+.mono-header,
+.mono-line,
+.mono-footer {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+}
+
+.mono-header {
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 0.82rem;
+}
+
+.mono-line {
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+
+.mono-label {
+  margin: 0;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mono-line p:last-child,
+.mono-footer p {
+  margin: 0;
+  max-width: 640px;
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+.mono-list {
+  margin: 0;
+  max-width: 640px;
+  padding-left: 18px;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.mono-list li + li {
+  margin-top: 10px;
+}
+
+.mono-footer {
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.mono-email {
+  color: var(--ink);
+}
+
+@media (max-width: 700px) {
+  .mono-header,
+  .mono-line,
+  .mono-footer {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

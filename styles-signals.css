@@ -1,0 +1,136 @@
+:root {
+  --bg: #f5f7fb;
+  --ink: #121a24;
+  --muted: #566174;
+  --line: #cad3df;
+  --accent: #0c6e58;
+  --panel: rgba(255, 255, 255, 0.82);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 110, 88, 0.08), transparent 30%),
+    linear-gradient(135deg, #f7f9fc, #edf1f7);
+  color: var(--ink);
+  font-family: "Chivo", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.signals-page {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.signals-header,
+.signals-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+}
+
+.signals-name,
+.signals-kicker,
+.signals-label,
+.signals-link {
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.signals-link,
+.signals-name,
+.signals-label {
+  color: var(--muted);
+}
+
+.signals-hero {
+  padding: 56px 0 40px;
+}
+
+.signals-hero h1 {
+  max-width: 900px;
+  margin: 10px 0 18px;
+  font-size: clamp(3.2rem, 8vw, 6.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.signals-summary {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.signals-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.signals-panel {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--panel);
+  backdrop-filter: blur(12px);
+}
+
+.signals-panel ul {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.signals-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.signals-strip {
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #ffffff;
+}
+
+.signals-strip p {
+  margin: 6px 0;
+}
+
+.signals-email {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .signals-columns,
+  .signals-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .signals-strip,
+  .signals-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonah Gleitman | Nocturne</title>
+    <meta
+      name="description"
+      content="A darker, minimal personal site concept for Jonah Gleitman."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles-nocturne.css" />
+  </head>
+  <body>
+    <main class="nocturne-page">
+      <header class="nocturne-header">
+        <p>Jonah Gleitman</p>
+        <a href="index.html">All Styles</a>
+      </header>
+
+      <section class="nocturne-hero">
+        <h1>
+          I build and test autonomous maritime systems at Saronic Technologies as an engineer and back early stage founders across Austin as an investor.
+        </h1>
+      </section>
+
+      <section class="nocturne-flow">
+        <ul class="nocturne-list">
+          <li>Test engineer based in Austin, Texas; studied mechanical engineering at UT Austin</li>
+          <li>At Saronic Technologies, I work on autonomous maritime systems, taking ownership of projects involving field work to answer ambiguous, open-ended questions, rapid prototyping, and hardware-in-the-loop testing</li>
+          <li>Venture Partner at Genesis, backing founders at UT Austin; I run the deal flow pipeline, lead investments, and organize events across the Austin startup ecosystem</li>
+          <li>Broadly interested in defense technology, hardware, and consumer software</li>
+        </ul>
+      </section>
+
+      <section class="nocturne-inline">
+        <p class="label">Reading</p>
+        <ul class="nocturne-list">
+          <li>The Hard Thing About Hard Things; Ben Horowitz</li>
+          <li>The Patriot; Jeremy Stern</li>
+          <li>Making Space Lasers Boring; Rob L'Heureux, Arena Magazine</li>
+        </ul>
+      </section>
+
+      <footer class="nocturne-footer">
+        <p class="label">Contact</p>
+        <a
+          class="nocturne-email"
+          href="#"
+          data-user="jonahgleitman"
+          data-domain="gmail.com"
+        >
+          jonahgleitman [at] gmail [dot] com
+        </a>
+      </footer>
+    </main>
+    <script>
+      const emailLink = document.querySelector(".nocturne-email");
+
+      if (emailLink) {
+        emailLink.href =
+          `mailto:${emailLink.dataset.user}@${emailLink.dataset.domain}`;
+      }
+    </script>
+  </body>
+</html>

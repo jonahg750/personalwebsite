@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonah Gleitman | Reading</title>
+    <meta
+      name="description"
+      content="Reading list for Jonah Gleitman."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles-dossier.css" />
+  </head>
+  <body>
+    <div class="dossier-grid-overlay" aria-hidden="true"></div>
+    <div class="terminal-shell" aria-hidden="true">
+      <div class="terminal-panel">
+        <div class="terminal-history" aria-live="polite"></div>
+        <form class="terminal-form">
+          <label class="terminal-prompt" for="terminal-input-reading">jonah@site:~$</label>
+          <input class="terminal-input" id="terminal-input-reading" name="command" type="text" autocomplete="off" spellcheck="false" />
+        </form>
+      </div>
+    </div>
+    <main class="dossier-page">
+      <header class="dossier-top">
+        <button class="dossier-id-button" type="button" aria-label="Jonah Gleitman">
+          <span class="dossier-id">Jonah Gleitman</span>
+        </button>
+        <div class="dossier-top-links">
+          <nav class="dossier-tabs" aria-label="Pages">
+            <a class="dossier-tab" href="index.html">Bio</a>
+            <a class="dossier-tab dossier-tab-active" href="reading.html">Reading</a>
+            <a class="dossier-tab" href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="dossier-body">
+        <ul class="dossier-list dossier-list-reading">
+          <li>
+            <a class="dossier-reading-link" href="https://a16z.com/books/the-hard-thing-about-hard-things/" target="_blank" rel="noreferrer">
+              The Hard Thing About Hard Things; Ben Horowitz
+            </a>
+          </li>
+          <li>
+            <a class="dossier-reading-link" href="https://colossus.com/article/the-patriot-shyam-sankar-palantir/" target="_blank" rel="noreferrer">
+              The Patriot; Jeremy Stern
+            </a>
+          </li>
+          <li>
+            <a class="dossier-reading-link" href="https://arenamag.com/articles/making-space-lasers-boring" target="_blank" rel="noreferrer">
+              Making Space Lasers Boring; Rob L'Heureux, Arena Magazine
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="dossier.js"></script>
+  </body>
+</html>

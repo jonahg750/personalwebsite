@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonah Gleitman | Contact</title>
+    <meta
+      name="description"
+      content="Contact Jonah Gleitman."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles-dossier.css" />
+  </head>
+  <body>
+    <div class="dossier-grid-overlay" aria-hidden="true"></div>
+    <div class="terminal-shell" aria-hidden="true">
+      <div class="terminal-panel">
+        <div class="terminal-history" aria-live="polite"></div>
+        <form class="terminal-form">
+          <label class="terminal-prompt" for="terminal-input-contact">jonah@site:~$</label>
+          <input class="terminal-input" id="terminal-input-contact" name="command" type="text" autocomplete="off" spellcheck="false" />
+        </form>
+      </div>
+    </div>
+    <main class="dossier-page">
+      <header class="dossier-top">
+        <button class="dossier-id-button" type="button" aria-label="Jonah Gleitman">
+          <span class="dossier-id">Jonah Gleitman</span>
+        </button>
+        <div class="dossier-top-links">
+          <nav class="dossier-tabs" aria-label="Pages">
+            <a class="dossier-tab" href="index.html">Bio</a>
+            <a class="dossier-tab" href="reading.html">Reading</a>
+            <a class="dossier-tab dossier-tab-active" href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="dossier-body">
+        <a
+          class="dossier-email dossier-email-large"
+          href="#"
+          data-user="jonahgleitman"
+          data-domain="gmail.com"
+        >
+          jonahgleitman [at] gmail [dot] com
+        </a>
+        <div class="dossier-socials" aria-label="Social links">
+          <a
+            class="dossier-social-link"
+            href="https://x.com/jonahgleitman"
+            target="_blank"
+            rel="noreferrer"
+          >
+            X
+          </a>
+          <a
+            class="dossier-social-link"
+            href="https://www.linkedin.com/in/jonahgleitman"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </section>
+    </main>
+    <script>
+      const emailLink = document.querySelector(".dossier-email");
+
+      if (emailLink) {
+        emailLink.href =
+          `mailto:${emailLink.dataset.user}@${emailLink.dataset.domain}`;
+      }
+    </script>
+    <script src="dossier.js"></script>
+  </body>
+</html>

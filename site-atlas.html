@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonah Gleitman | Atlas</title>
+    <meta
+      name="description"
+      content="Atlas-style homepage for Jonah Gleitman, spanning engineering, investing, and reading."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles-atlas.css" />
+  </head>
+  <body>
+    <main class="atlas-page">
+      <header class="atlas-header">
+        <div>
+          <p class="atlas-tag">Jonah Gleitman</p>
+          <h1>Engineering autonomy. Backing builders.</h1>
+        </div>
+        <a class="atlas-home" href="index.html">All Styles</a>
+      </header>
+
+      <section class="atlas-intro">
+        <p class="atlas-lead">
+          I build and test autonomous maritime systems at Saronic Technologies as an engineer and back early stage founders across Austin as an investor.
+        </p>
+        <div class="atlas-pill-row">
+          <span>Austin, Texas</span>
+          <span>UT Austin mechanical engineering</span>
+          <span>Defense tech, hardware, consumer software</span>
+        </div>
+      </section>
+
+      <section class="atlas-grid">
+        <article class="atlas-card atlas-card-primary">
+          <p class="atlas-label">Bio</p>
+          <ul class="atlas-list">
+            <li>Test engineer based in Austin, Texas; studied mechanical engineering at UT Austin</li>
+            <li>At Saronic Technologies, I work on autonomous maritime systems, taking ownership of projects involving field work to answer ambiguous, open-ended questions, rapid prototyping, and hardware-in-the-loop testing</li>
+            <li>Venture Partner at Genesis, backing founders at UT Austin; I run the deal flow pipeline, lead investments, and organize events across the Austin startup ecosystem</li>
+            <li>Broadly interested in defense technology, hardware, and consumer software</li>
+          </ul>
+        </article>
+
+        <article class="atlas-card">
+          <p class="atlas-label">Reading</p>
+          <ul class="atlas-list">
+            <li>The Hard Thing About Hard Things; Ben Horowitz</li>
+            <li>The Patriot; Jeremy Stern</li>
+            <li>Making Space Lasers Boring; Rob L'Heureux, Arena Magazine</li>
+          </ul>
+        </article>
+
+        <article class="atlas-card">
+          <p class="atlas-label">Contact</p>
+          <p>jonahgleitman [at] gmail [dot] com</p>
+        </article>
+
+        <article class="atlas-card atlas-card-quote">
+          <p class="atlas-label">Note</p>
+          <p>Original copy preserved.</p>
+        </article>
+      </section>
+
+      <footer class="atlas-footer">
+        <div>
+          <p class="atlas-label">Contact</p>
+          <a
+            class="atlas-email"
+            href="#"
+            data-user="jonahgleitman"
+            data-domain="gmail.com"
+          >
+            jonahgleitman [at] gmail [dot] com
+          </a>
+        </div>
+        <p class="atlas-note">Click the address to email.</p>
+      </footer>
+    </main>
+    <script>
+      const emailLink = document.querySelector(".atlas-email");
+
+      if (emailLink) {
+        emailLink.href =
+          `mailto:${emailLink.dataset.user}@${emailLink.dataset.domain}`;
+      }
+    </script>
+  </body>
+</html>

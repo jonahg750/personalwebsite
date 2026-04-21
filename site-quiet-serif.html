@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonah Gleitman | Quiet Serif</title>
+    <meta
+      name="description"
+      content="A restrained dark serif personal site concept for Jonah Gleitman."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Libre+Franklin:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles-quiet-serif.css" />
+  </head>
+  <body>
+    <main class="serif-page">
+      <header class="serif-header">
+        <p>Jonah Gleitman</p>
+        <a href="index.html">All Styles</a>
+      </header>
+
+      <section class="serif-intro">
+        <h1>
+          I build and test autonomous maritime systems at Saronic Technologies as an engineer and back early stage founders across Austin as an investor.
+        </h1>
+      </section>
+
+      <section class="serif-copy">
+        <ul class="serif-list">
+          <li>Test engineer based in Austin, Texas; studied mechanical engineering at UT Austin</li>
+          <li>At Saronic Technologies, I work on autonomous maritime systems, taking ownership of projects involving field work to answer ambiguous, open-ended questions, rapid prototyping, and hardware-in-the-loop testing</li>
+          <li>Venture Partner at Genesis, backing founders at UT Austin; I run the deal flow pipeline, lead investments, and organize events across the Austin startup ecosystem</li>
+          <li>Broadly interested in defense technology, hardware, and consumer software</li>
+        </ul>
+      </section>
+
+      <section class="serif-meta">
+        <ul class="serif-list">
+          <li>The Hard Thing About Hard Things; Ben Horowitz</li>
+          <li>The Patriot; Jeremy Stern</li>
+          <li>Making Space Lasers Boring; Rob L'Heureux, Arena Magazine</li>
+        </ul>
+        <a
+          class="serif-email"
+          href="#"
+          data-user="jonahgleitman"
+          data-domain="gmail.com"
+        >
+          jonahgleitman [at] gmail [dot] com
+        </a>
+      </section>
+    </main>
+    <script>
+      const emailLink = document.querySelector(".serif-email");
+
+      if (emailLink) {
+        emailLink.href =
+          `mailto:${emailLink.dataset.user}@${emailLink.dataset.domain}`;
+      }
+    </script>
+  </body>
+</html>

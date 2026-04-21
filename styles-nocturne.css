@@ -1,0 +1,122 @@
+:root {
+  --bg: #101112;
+  --bg-soft: #17191b;
+  --ink: #f0f0eb;
+  --muted: #a6a8ab;
+  --line: rgba(240, 240, 235, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.06), transparent 20%),
+    linear-gradient(180deg, #121314, #0b0c0d);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nocturne-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 28px 56px;
+}
+
+.nocturne-header,
+.nocturne-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.nocturne-header,
+.label,
+.nocturne-footer a {
+  font-size: 0.86rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nocturne-header,
+.label {
+  color: var(--muted);
+}
+
+.nocturne-hero {
+  padding: 72px 0 52px;
+  border-bottom: 1px solid var(--line);
+}
+
+.nocturne-hero h1 {
+  margin: 0;
+  font-family: "Newsreader", serif;
+  font-size: clamp(3rem, 8vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.nocturne-hero p {
+  max-width: 620px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.nocturne-flow {
+  padding: 34px 0;
+}
+
+.nocturne-flow p,
+.nocturne-inline p:last-child {
+  max-width: 700px;
+  margin: 0 0 22px;
+  font-family: "Newsreader", serif;
+  font-size: 1.5rem;
+  line-height: 1.55;
+}
+
+.nocturne-list {
+  max-width: 700px;
+  margin: 0;
+  padding-left: 22px;
+  font-family: "Newsreader", serif;
+  font-size: 1.35rem;
+  line-height: 1.6;
+}
+
+.nocturne-list li + li {
+  margin-top: 14px;
+}
+
+.nocturne-inline,
+.nocturne-footer {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.nocturne-email {
+  color: var(--ink);
+}
+
+@media (max-width: 680px) {
+  .nocturne-header,
+  .nocturne-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nocturne-flow p,
+  .nocturne-inline p:last-child {
+    font-size: 1.24rem;
+  }
+}
