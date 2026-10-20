@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonah Gleitman — Draft</title>
+  <meta name="description" content="Jonah Gleitman — R&D Test Engineer II at Saronic Technologies, working on autonomous maritime vessels. Based in Austin, Texas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #11151b;
+      --line: #232a33;
+      --text: #ece9e1;
+      --muted: #98a1ad;
+      --dim: #5f6873;
+      --accent: #f0a841;
+      --accent-soft: rgba(240, 168, 65, 0.12);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: #0b0d10; }
+
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+
+    /* ---------- nav ---------- */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11, 13, 16, 0.82);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 920px; margin: 0 auto; padding: 14px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand {
+      font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: -0.02em;
+      color: var(--text); text-decoration: none; font-size: 1.05rem;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 22px; align-items: center; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .draft-pill {
+      font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em;
+      border: 1px solid var(--accent); color: var(--accent);
+      padding: 3px 10px; border-radius: 999px; text-transform: uppercase;
+    }
+    @media (max-width: 640px) { .nav-links a { display: none; } }
+
+    /* ---------- hero ---------- */
+    .hero { padding: 110px 0 70px; position: relative; overflow: hidden; }
+    .eyebrow {
+      font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.22em;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 18px;
+    }
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(3rem, 8vw, 5.2rem);
+      font-weight: 700; letter-spacing: -0.045em; line-height: 1.02; margin: 0 0 22px;
+    }
+    .lede {
+      font-size: 1.18rem; color: var(--muted); max-width: 620px; margin: 0 0 34px;
+      font-weight: 400;
+    }
+    .lede strong { color: var(--text); font-weight: 600; }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 10px 26px;
+      font-family: var(--mono); font-size: 0.82rem; color: var(--dim);
+    }
+    .hero-meta .dot { color: var(--accent); }
+    #sonar {
+      position: absolute; right: -40px; top: 40px; width: 340px; height: 340px;
+      opacity: 0.5; pointer-events: none;
+    }
+    @media (max-width: 760px) { #sonar { display: none; } }
+
+    /* ---------- sections ---------- */
+    section { padding: 64px 0; border-top: 1px solid var(--line); }
+    .section-label {
+      font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.22em;
+      color: var(--dim); text-transform: uppercase; margin-bottom: 26px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    h2 {
+      font-family: "Space Grotesk", sans-serif; font-weight: 600;
+      font-size: 1.9rem; letter-spacing: -0.03em; margin: 0 0 18px;
+    }
+    p { color: var(--muted); margin: 0 0 16px; max-width: 660px; }
+    p strong { color: var(--text); font-weight: 600; }
+
+    /* ---------- work ---------- */
+    .job { padding: 22px 0; border-bottom: 1px dashed var(--line); }
+    .job:last-child { border-bottom: none; }
+    .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+    .job-title { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 1.08rem; margin: 0; }
+    .job-title .co { color: var(--accent); font-weight: 500; }
+    .job-dates { font-family: var(--mono); font-size: 0.78rem; color: var(--dim); white-space: nowrap; }
+    .job p { margin: 8px 0 0; font-size: 0.96rem; }
+
+    /* ---------- projects ---------- */
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+      padding: 24px; transition: transform 0.25s, border-color 0.25s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .card h3 {
+      font-family: "Space Grotesk", sans-serif; font-size: 1.12rem; font-weight: 600;
+      margin: 0 0 8px; letter-spacing: -0.02em;
+    }
+    .card p { font-size: 0.92rem; margin: 0 0 14px; }
+    .card .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .tag {
+      font-family: var(--mono); font-size: 0.72rem; color: var(--muted);
+      background: var(--accent-soft); border: 1px solid var(--line);
+      padding: 2px 9px; border-radius: 999px;
+    }
+    .card a.link {
+      font-family: var(--mono); font-size: 0.8rem; color: var(--accent); text-decoration: none;
+    }
+    .card a.link:hover { text-decoration: underline; }
+
+    /* ---------- interests ---------- */
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip {
+      font-size: 0.92rem; color: var(--text);
+      border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px;
+      background: var(--panel); transition: border-color 0.2s, color 0.2s;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ---------- contact ---------- */
+    .contact-box {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+      padding: 34px; display: flex; justify-content: space-between; align-items: center;
+      gap: 24px; flex-wrap: wrap;
+    }
+    .contact-box h2 { margin-bottom: 6px; }
+    .contact-box p { margin: 0; }
+    .btn {
+      display: inline-block; background: var(--accent); color: #0b0d10;
+      font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 0.95rem;
+      padding: 13px 28px; border-radius: 10px; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(240,168,65,0.35); }
+
+    footer {
+      border-top: 1px solid var(--line); padding: 34px 0 46px; margin-top: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--mono); font-size: 0.76rem; color: var(--dim); flex-wrap: wrap; gap: 10px;
+    }
+
+    /* ---------- reveal ---------- */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="#top">Jonah Gleitman<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+        <span class="draft-pill">Draft</span>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero wrap" id="top">
+    <canvas id="sonar" width="340" height="340" aria-hidden="true"></canvas>
+    <div class="eyebrow">Austin, Texas</div>
+    <h1>Jonah<br />Gleitman</h1>
+    <p class="lede">
+      Mechanical engineer working on <strong>autonomous ships</strong> at
+      <strong>Saronic Technologies</strong> — and building small, sharp software
+      tools on the side.
+    </p>
+    <div class="hero-meta">
+      <span>R&amp;D Test Engineer II <span class="dot">/</span> Saronic</span>
+      <span>UT Austin <span class="dot">’25</span></span>
+      <span>Eagle Scout</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="about" class="reveal">
+      <div class="section-label">01 — About</div>
+      <h2>Engineer by training, builder by habit.</h2>
+      <p>
+        I graduated from the University of Texas at Austin in 2025 with a B.S. in
+        Mechanical Engineering (plus an Elements of Computing certificate) and went
+        straight into defense tech. At Saronic I test autonomous surface vessels —
+        the uncrewed ships redefining how navies operate — running field
+        operations and hardware-in-the-loop testing on the Corsair program.
+      </p>
+      <p>
+        I started there as an intern and was promoted to R&amp;D Test Engineer II in
+        under two years. The through-line of my work is simple:
+        <strong>own the thing that moves the needle</strong> — whether that’s a
+        live-fire test on the water or a tool that saves the team a week.
+      </p>
+      <p>
+        Off the clock I ship software (usually AI-flavored), shoot pool, climb at
+        Austin Bouldering Project, and follow macroeconomics and prediction
+        markets more closely than is probably healthy.
+      </p>
+    </section>
+
+    <section id="work" class="reveal">
+      <div class="section-label">02 — Work</div>
+
+      <div class="job">
+        <div class="job-head">
+          <p class="job-title">R&amp;D Test Engineer II <span class="co">— Saronic Technologies</span></p>
+          <span class="job-dates">2025 — Present</span>
+        </div>
+        <p>
+          Field operations and hardware-in-the-loop test assets for the Corsair
+          autonomous vessel program — rapid prototyping, live-fire and intercept
+          demonstrations, and firmware rollouts across a customer fleet. Intern →
+          Engineer I → Engineer II in under two years.
+        </p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <p class="job-title">Engineering Intern, Technical Operations <span class="co">— KCF Technologies</span></p>
+          <span class="job-dates">2024</span>
+        </div>
+        <p>
+          Condition monitoring and vibration analysis for industrial machinery.
+          Audited sensor configurations and automated reporting workflows with
+          Python, pandas, and the SmartDiagnostics API.
+        </p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <p class="job-title">Venture Analyst <span class="co">— Genesis</span></p>
+          <span class="job-dates">UT Austin</span>
+        </div>
+        <p>
+          Sourced and diligenced early-stage startups for a UT-affiliated venture
+          fund; led a deal into a small drone startup and moderated a fireside
+          chat with Cory Levy.
+        </p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <p class="job-title">Machine Shop Staff <span class="co">— UT Austin</span></p>
+          <span class="job-dates">College</span>
+        </div>
+        <p>
+          CNC mills, lathes, fixtures, and maintenance — where I learned that the
+          best design is the one you can actually build.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <div class="section-label">03 — Projects</div>
+      <div class="grid">
+        <div class="card">
+          <h3>sendtogether.app</h3>
+          <p>
+            Coordinate resident emails that actually get sent. Residents draft
+            together, agree on the message, and send as one voice instead of forty
+            separate complaints.
+          </p>
+          <div class="tags">
+            <span class="tag">React</span><span class="tag">Vite</span>
+            <span class="tag">Gmail API</span><span class="tag">Claude API</span>
+          </div>
+          <a class="link" href="https://sendtogether.app" target="_blank" rel="noopener">sendtogether.app →</a>
+        </div>
+
+        <div class="card">
+          <h3>dont-ghost</h3>
+          <p>
+            Never accidentally ghost someone again. A read-only monitor that
+            watches your iMessage threads, notices when the ball is in your court,
+            and nudges you on Telegram until you follow up.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">macOS</span>
+            <span class="tag">Telegram</span><span class="tag">launchd</span>
+          </div>
+          <a class="link" href="https://github.com/jonahg750/dont-ghost" target="_blank" rel="noopener">github.com/jonahg750/dont-ghost →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="reveal">
+      <div class="section-label">04 — Interests</div>
+      <div class="chips">
+        <span class="chip">AI agents</span>
+        <span class="chip">Defense tech</span>
+        <span class="chip">Startups</span>
+        <span class="chip">Macroeconomics</span>
+        <span class="chip">Prediction markets</span>
+        <span class="chip">Philosophy</span>
+        <span class="chip">Network states</span>
+        <span class="chip">Billiards</span>
+        <span class="chip">Climbing</span>
+        <span class="chip">Travel</span>
+      </div>
+    </section>
+
+    <!-- TODO (Jonah): add email + LinkedIn here when ready -->
+    <section id="contact" class="reveal">
+      <div class="section-label">05 — Contact</div>
+      <div class="contact-box">
+        <div>
+          <h2>Say hello.</h2>
+          <p>Best reached through GitHub — or find me on the water testing boats.</p>
+        </div>
+        <a class="btn" href="https://github.com/jonahg750" target="_blank" rel="noopener">github.com/jonahg750</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Jonah Gleitman</span>
+      <span>Draft v1 — the homepage is still just my name, on purpose.</span>
+    </footer>
+  </main>
+
+  <script>
+    // ---- Scroll reveal ----
+    (function () {
+      var els = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        els.forEach(function (el) { el.classList.add("visible"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.08 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // ---- Sonar sweep: a nod to autonomous surface vessels ----
+    (function () {
+      var canvas = document.getElementById("sonar");
+      if (!canvas) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var ctx = canvas.getContext("2d");
+      var cx = 170, cy = 170;
+      var rings = [50, 90, 130, 162];
+      var blips = [
+        { r: 78,  a: 0.6 },
+        { r: 118, a: 2.4 },
+        { r: 95,  a: 4.2 },
+        { r: 145, a: 5.5 }
+      ];
+      var sweep = 0, running = true;
+
+      function angDiff(a, b) {
+        var d = (a - b) % (Math.PI * 2);
+        if (d < 0) d += Math.PI * 2;
+        return d;
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, 340, 340);
+
+        // rings
+        ctx.strokeStyle = "rgba(240,168,65,0.18)";
+        ctx.lineWidth = 1;
+        rings.forEach(function (r) {
+          ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+        });
+        // crosshairs
+        ctx.beginPath(); ctx.moveTo(cx - 162, cy); ctx.lineTo(cx + 162, cy);
+        ctx.moveTo(cx, cy - 162); ctx.lineTo(cx, cy + 162); ctx.stroke();
+
+        // sweep trail
+        var trail = 0.9;
+        for (var i = 0; i < 24; i++) {
+          var t = sweep - (i / 24) * trail;
+          var alpha = 0.5 * (1 - i / 24);
+          ctx.strokeStyle = "rgba(240,168,65," + alpha.toFixed(3) + ")";
+          ctx.lineWidth = 2;
+          ctx.beginPath(); ctx.moveTo(cx, cy);
+          ctx.lineTo(cx + 162 * Math.cos(t), cy + 162 * Math.sin(t));
+          ctx.stroke();
+        }
+
+        // blips: glow when the sweep passes over them
+        blips.forEach(function (b) {
+          var d = angDiff(sweep, b.a);
+          var glow = d < 1.2 ? (1 - d / 1.2) : 0;
+          var x = cx + b.r * Math.cos(b.a), y = cy + b.r * Math.sin(b.a);
+          ctx.beginPath(); ctx.arc(x, y, 3 + glow * 2, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(240,168,65," + (0.25 + glow * 0.75).toFixed(3) + ")";
+          ctx.fill();
+        });
+
+        sweep += 0.012;
+        if (running) requestAnimationFrame(draw);
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        var vis = entries[0].isIntersecting;
+        if (vis && !running) { running = true; requestAnimationFrame(draw); }
+        else if (!vis) { running = false; }
+      });
+      io.observe(canvas);
+      draw();
+    })();
+  </script>
+</body>
+</html>
